@@ -25,7 +25,7 @@
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_c8e618d7ce92735ff1a0c650d0bde006 {
+                #map_7a85e5f9d638a1c01221e798176ba504 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -37,7 +37,7 @@
         
     
         &lt;style&gt;
-            #macro_element_0fb15efb3073a27e128b34e13a7eea26 {
+            #macro_element_d3bbdec4fa2d0858a2dab3f12642f145 {
                 position: absolute;
                 z-index: 9999;
                 left: 0;
@@ -51,10 +51,10 @@
 &lt;body&gt;
     
     
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_c8e618d7ce92735ff1a0c650d0bde006&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_7a85e5f9d638a1c01221e798176ba504&quot; &gt;&lt;/div&gt;
         
     
-        &lt;div id=&quot;macro_element_0fb15efb3073a27e128b34e13a7eea26&quot;&gt;
+        &lt;div id=&quot;macro_element_d3bbdec4fa2d0858a2dab3f12642f145&quot;&gt;
                      &lt;div style=&quot;position: absolute; left: 50%;&quot;&gt;
             &lt;p style=&quot;position: relative;
                     left: -50%;
@@ -69,7 +69,7 @@
                     color: #rgba(0,0,0,1);
                     
                     &quot;&gt;
-            Nyakweri Forest Cover 2006-2010
+            Nyakweri Forest Cover Loss 2010
             &lt;/p&gt;
         &lt;/div&gt;
         
@@ -125,7 +125,7 @@
   &lt;ul class=&#x27;legend-labels&#x27;&gt;
     &lt;li&gt;&lt;span style=&#x27;background:#FF0000;opacity:1.0;&#x27;&gt;&lt;/span&gt;Forest Loss&lt;/li&gt;
     &lt;li&gt;&lt;span style=&#x27;background:#236F21;opacity:1.0;&#x27;&gt;&lt;/span&gt;Forest Cover&lt;/li&gt;
-    &lt;li&gt;&lt;span style=&#x27;background:#EEEACF;opacity:1.0;&#x27;&gt;&lt;/span&gt;Transmara Region&lt;/li&gt;
+    &lt;li&gt;&lt;span style=&#x27;background:#EEECDD;opacity:1.0;&#x27;&gt;&lt;/span&gt;Transmara Region&lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -175,8 +175,8 @@
 &lt;script&gt;
     
     
-            var map_c8e618d7ce92735ff1a0c650d0bde006 = L.map(
-                &quot;map_c8e618d7ce92735ff1a0c650d0bde006&quot;,
+            var map_7a85e5f9d638a1c01221e798176ba504 = L.map(
+                &quot;map_7a85e5f9d638a1c01221e798176ba504&quot;,
                 {
                     center: [20.0, 0.0],
                     crs: L.CRS.EPSG3857,
@@ -197,110 +197,137 @@
 
         
     
-            map_c8e618d7ce92735ff1a0c650d0bde006.fitBounds(
+            map_7a85e5f9d638a1c01221e798176ba504.fitBounds(
                 [[20, 0], [20, 0]],
                 {&quot;maxZoom&quot;: 2}
             );
         
     
-            var tile_layer_4c54a010758b4cd0d6d0ac4dab9e382e = L.tileLayer(
+            var tile_layer_575c9fb3e08f91d97e12f79cd5fde7d3 = L.tileLayer(
                 &quot;https://services.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}&quot;,
                 {&quot;attribution&quot;: &quot;Esri&quot;, &quot;detectRetina&quot;: false, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1.0, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
             );
         
     
-            tile_layer_4c54a010758b4cd0d6d0ac4dab9e382e.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_575c9fb3e08f91d97e12f79cd5fde7d3.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-        function geo_json_286e289c14631fdc1d20242465db240d_styler(feature) {
+        var macro_element_55f10a041a6b439ba417072dfff6ed75 = L.Control.extend({
+            onAdd: function(map) {
+                var control;
+                if (this.options.imagePath){
+                    var img = document.createElement(&#x27;img&#x27;);
+                    img.src=this.options.imagePath;
+                    img.style.width = (this.options.scale * 100) + &#x27;px&#x27;;
+                    img.style.height = (this.options.scale * 100) + &#x27;px&#x27;;
+                    control=img;
+                } else {
+                    var template = document.createElement(&#x27;template&#x27;);
+                    template.innerHTML = `            &lt;svg width=&quot;80.0px&quot; height=&quot;80.0px&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 773 798&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+&lt;path transform=&quot;translate(0 798) scale(1 -1)&quot; d=&quot;m674 403-161 48q-17 48-66 70l-46 166-46-167q-22-9-38-25t-29-45l-159-47 159-49q15-44 67-68l46-164 48 164q39 17 64 69zm-163 0q0-49-32-81-33-34-78-34-46 0-77 34-31 31-31 81 0 46 31 80t77 34q45 0 78-34 32-34 32-80zm-12 1q-5 7-7.5 17.5t-4 21.5-4.5 21-9 16q-7 6-17 9.5t-20.5 6-20 6-15.5 9.5v-107h98zm-98-108v108h-99l3-3 23-75q6-6 16.5-9.5t21-5.5 20-5.5 15.5-9.5zm-280 152h-26v-2q5 0 6-1 3-3 3-6 0-2-0.5-4t-1.5-7l-18-48-16 47q-3 9-3 12 0 7 7 7h2v2h-34v-2q2 0 3-1l3-3q2 0 2-2 2-1 4-5l5-15-12-42-17 50q-3 9-3 11 0 7 6 7h2v2h-33v-2q8 0 10-6 1-2 3-9l27-74h5l15 53 19-53h2l27 71q2 10 3 11 5 7 10 7v2zm325 350h-29v-3q7 0 10-4 1-1 1-11v-35l-42 53h-32v-3q7-2 12-6l2-3v-62q0-13-12-13v-2h29v2h-2q-4 0-7 2.5t-3 10.5v55l58-72h3v73q0 9 1 10.5t8 3.5l3 1v3zm207-395h-130q0 16-6 42zm-212-119-40-141v135q9 0 19 1t21 5zm-154 78-137 41h130q0-10 2-19.5t5-21.5zm114 168q-25 0-39-8l39 142v-134zm372-148h-3q-3-4-5-7.5t-4-5.5q-5-5-17-5h-19q-3 0-3 5v35h20q8 0 10-6 1-1 1-3 0-3 1-4h3v30h-3q-2-9-4-11t-8-2h-20v35h24q7 0 8-1 4-1 9-14h3l-1 20h-69v-2h3q7 0 8-4 2-2 2-9v-58q0-11-4-12-1-1-6-1h-3v-3h68zm-340-358q0 9-5.5 14.5t-20.5 14.5q-9 5-13 9l-5 5q-3 10-3 7 0 14 14 14 18 0 24-26h2v31h-2q-2-6-5-6-4 0-5 1-8 5-15 5-11 0-17.5-7t-6.5-17q0-13 9-19 6-4 16.5-10.5t12.5-8.5q8-7 8-13 0-14-18-14-13 0-18 5.5t-7 20.5h-2v-30h2q0 5 3 5l16-5h8q12 0 20 7t8 17z&quot;/&gt;
+            &lt;/svg&gt;`.trim();
+                    control = template.content.firstChild
+                }
+
+                control.style.transform = &#x27;rotate(0deg)&#x27;;
+                return control;
+            }
+        });
+        (new macro_element_55f10a041a6b439ba417072dfff6ed75({&quot;imagePath&quot;: &quot;&quot;, &quot;position&quot;: &quot;topleft&quot;, &quot;scale&quot;: 0.8})).addTo(map_7a85e5f9d638a1c01221e798176ba504);
+
+        
+    
+        function geo_json_3af333f193e2fede724ea8fbb379459c_styler(feature) {
             switch(feature.id) {
                 default:
-                    return {&quot;color&quot;: &quot;#EEEACF&quot;, &quot;fillColor&quot;: &quot;#EEEACF&quot;, &quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
+                    return {&quot;color&quot;: &quot;#EEECDD&quot;, &quot;fillColor&quot;: &quot;#EEECDD&quot;, &quot;fillOpacity&quot;: 0.5, &quot;weight&quot;: 2};
             }
         }
-        function geo_json_286e289c14631fdc1d20242465db240d_highlighter(feature) {
+        function geo_json_3af333f193e2fede724ea8fbb379459c_highlighter(feature) {
             switch(feature.id) {
                 default:
                     return {&quot;fillOpacity&quot;: 0.75};
             }
         }
-        function geo_json_286e289c14631fdc1d20242465db240d_pointToLayer(feature, latlng) {
+        function geo_json_3af333f193e2fede724ea8fbb379459c_pointToLayer(feature, latlng) {
             var opts = {&quot;bubblingMouseEvents&quot;: true, &quot;color&quot;: &quot;#3388ff&quot;, &quot;dashArray&quot;: null, &quot;dashOffset&quot;: null, &quot;fill&quot;: true, &quot;fillColor&quot;: &quot;#3388ff&quot;, &quot;fillOpacity&quot;: 0.2, &quot;fillRule&quot;: &quot;evenodd&quot;, &quot;lineCap&quot;: &quot;round&quot;, &quot;lineJoin&quot;: &quot;round&quot;, &quot;opacity&quot;: 1.0, &quot;radius&quot;: 2, &quot;stroke&quot;: true, &quot;weight&quot;: 3};
             
-            let style = geo_json_286e289c14631fdc1d20242465db240d_styler(feature)
+            let style = geo_json_3af333f193e2fede724ea8fbb379459c_styler(feature)
             Object.assign(opts, style)
             
             return new L.CircleMarker(latlng, opts)
         }
 
-        function geo_json_286e289c14631fdc1d20242465db240d_onEachFeature(feature, layer) {
+        function geo_json_3af333f193e2fede724ea8fbb379459c_onEachFeature(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                            geo_json_286e289c14631fdc1d20242465db240d.resetStyle(e.target);
+                            geo_json_3af333f193e2fede724ea8fbb379459c.resetStyle(e.target);
                     }
                 },
                 mouseover: function(e) {
                     if(typeof e.target.setStyle === &quot;function&quot;){
-                        const highlightStyle = geo_json_286e289c14631fdc1d20242465db240d_highlighter(e.target.feature)
+                        const highlightStyle = geo_json_3af333f193e2fede724ea8fbb379459c_highlighter(e.target.feature)
                         e.target.setStyle(highlightStyle);
                     }
                 },
             });
         };
-        var geo_json_286e289c14631fdc1d20242465db240d = L.geoJson(null, {
-                onEachFeature: geo_json_286e289c14631fdc1d20242465db240d_onEachFeature,
+        var geo_json_3af333f193e2fede724ea8fbb379459c = L.geoJson(null, {
+                onEachFeature: geo_json_3af333f193e2fede724ea8fbb379459c_onEachFeature,
             
-                style: geo_json_286e289c14631fdc1d20242465db240d_styler,
-                pointToLayer: geo_json_286e289c14631fdc1d20242465db240d_pointToLayer,
-                opacity: 0.7,
+                style: geo_json_3af333f193e2fede724ea8fbb379459c_styler,
+                pointToLayer: geo_json_3af333f193e2fede724ea8fbb379459c_pointToLayer,
+                opacity: 0.1,
+                edgeColor: &quot;black&quot;,
+                edgeWidth: 1,
         });
 
-        function geo_json_286e289c14631fdc1d20242465db240d_add (data) {
-            geo_json_286e289c14631fdc1d20242465db240d
+        function geo_json_3af333f193e2fede724ea8fbb379459c_add (data) {
+            geo_json_3af333f193e2fede724ea8fbb379459c
                 .addData(data);
         }
-            geo_json_286e289c14631fdc1d20242465db240d_add({&quot;bbox&quot;: [34.586959568441, -1.415923073328969, 35.11683922566618, -0.924667743730629], &quot;features&quot;: [{&quot;bbox&quot;: [34.586959568441, -1.415923073328969, 35.11683922566618, -0.924667743730629], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[[34.77893414202686, -1.415923073328969], [34.746016481347105, -1.402166810690956], [34.731711726794444, -1.389457291188506], [34.7162514450138, -1.348233223222808], [34.711058643139275, -1.309353203480353], [34.703026888384485, -1.280293323058553], [34.69117048850836, -1.218348803724547], [34.63005686063193, -1.135897311013218], [34.629436755708326, -1.124737594352796], [34.622925654010416, -1.105827977262253], [34.61424418507987, -1.088778219175545], [34.612383870309046, -1.075448341069168], [34.607112978458346, -1.065218395094515], [34.59905161445141, -1.053128415182577], [34.586959568441, -1.039798382994599], [34.58714014120824, -1.021034896330022], [34.60556271614933, -0.98864774342195], [34.63456574071271, -0.970557207007903], [34.66975247582892, -0.969027568100119], [34.8059098421482, -0.943023601875006], [34.88087288652623, -0.924667743730629], [34.98184351772929, -0.935375339303663], [35.055276704058784, -0.979735025888174], [35.09352315527207, -1.01338681156315], [35.11032812396827, -1.038558377127697], [35.11683922566618, -1.063358401258957], [35.11341130990297, -1.088337242449052], [35.08983094800004, -1.128925640999967], [35.05990994300004, -1.163394925999967], [35.042814383000064, -1.186372874999961], [35.03000437900005, -1.219395438999925], [35.02146089000007, -1.23662621099993], [35.003601, -1.248023], [34.979932449000046, -1.258032037999953], [34.95783760100005, -1.289049344999967], [34.95127357100006, -1.30449523599998], [34.92196990700006, -1.326487465999946], [34.881739966000055, -1.34744775799993], [34.83966604500006, -1.37003896799996], [34.806378093000035, -1.393724666999958], [34.79252435061789, -1.407436118314317], [34.786323301381785, -1.414565162609904], [34.77893414202686, -1.415923073328969]]]], &quot;type&quot;: &quot;MultiPolygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;__folium_color&quot;: &quot;#EEEACF&quot;, &quot;area&quot;: 2003, &quot;name&quot;: &quot;Nyakweri&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
+            geo_json_3af333f193e2fede724ea8fbb379459c_add({&quot;bbox&quot;: [34.586959568441, -1.415923073328969, 35.11683922566618, -0.924667743730629], &quot;features&quot;: [{&quot;bbox&quot;: [34.586959568441, -1.415923073328969, 35.11683922566618, -0.924667743730629], &quot;geometry&quot;: {&quot;coordinates&quot;: [[[[34.77893414202686, -1.415923073328969], [34.746016481347105, -1.402166810690956], [34.731711726794444, -1.389457291188506], [34.7162514450138, -1.348233223222808], [34.711058643139275, -1.309353203480353], [34.703026888384485, -1.280293323058553], [34.69117048850836, -1.218348803724547], [34.63005686063193, -1.135897311013218], [34.629436755708326, -1.124737594352796], [34.622925654010416, -1.105827977262253], [34.61424418507987, -1.088778219175545], [34.612383870309046, -1.075448341069168], [34.607112978458346, -1.065218395094515], [34.59905161445141, -1.053128415182577], [34.586959568441, -1.039798382994599], [34.58714014120824, -1.021034896330022], [34.60556271614933, -0.98864774342195], [34.63456574071271, -0.970557207007903], [34.66975247582892, -0.969027568100119], [34.8059098421482, -0.943023601875006], [34.88087288652623, -0.924667743730629], [34.98184351772929, -0.935375339303663], [35.055276704058784, -0.979735025888174], [35.09352315527207, -1.01338681156315], [35.11032812396827, -1.038558377127697], [35.11683922566618, -1.063358401258957], [35.11341130990297, -1.088337242449052], [35.08983094800004, -1.128925640999967], [35.05990994300004, -1.163394925999967], [35.042814383000064, -1.186372874999961], [35.03000437900005, -1.219395438999925], [35.02146089000007, -1.23662621099993], [35.003601, -1.248023], [34.979932449000046, -1.258032037999953], [34.95783760100005, -1.289049344999967], [34.95127357100006, -1.30449523599998], [34.92196990700006, -1.326487465999946], [34.881739966000055, -1.34744775799993], [34.83966604500006, -1.37003896799996], [34.806378093000035, -1.393724666999958], [34.79252435061789, -1.407436118314317], [34.786323301381785, -1.414565162609904], [34.77893414202686, -1.415923073328969]]]], &quot;type&quot;: &quot;MultiPolygon&quot;}, &quot;id&quot;: &quot;0&quot;, &quot;properties&quot;: {&quot;__folium_color&quot;: &quot;#EEECDD&quot;, &quot;area&quot;: 2003, &quot;name&quot;: &quot;Nyakweri&quot;}, &quot;type&quot;: &quot;Feature&quot;}], &quot;type&quot;: &quot;FeatureCollection&quot;});
 
         
     
-            geo_json_286e289c14631fdc1d20242465db240d.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            geo_json_3af333f193e2fede724ea8fbb379459c.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            var tile_layer_23094a2fd750494f4c64b8d3eed881b5 = L.tileLayer(
-                &quot;https://earthengine.googleapis.com/v1/projects/701763624385/maps/e9e40351b0ab6d85a573d562c10d6451-5a5bc46d24198a6a446482624e3a70e4/tiles/{z}/{x}/{y}&quot;,
+            var tile_layer_78237c243b67a3e5f190892c150da991 = L.tileLayer(
+                &quot;https://earthengine.googleapis.com/v1/projects/701763624385/maps/e9e40351b0ab6d85a573d562c10d6451-ba864df9b12b2438e094c6a3323f9f21/tiles/{z}/{x}/{y}&quot;,
                 {&quot;attribution&quot;: &quot;Google Earth Engine&quot;, &quot;detectRetina&quot;: false, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
             );
         
     
-            tile_layer_23094a2fd750494f4c64b8d3eed881b5.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_78237c243b67a3e5f190892c150da991.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            var tile_layer_d9aaa23a0e8863107141eeb377d24af2 = L.tileLayer(
-                &quot;https://earthengine.googleapis.com/v1/projects/701763624385/maps/9bf2b0ea46bc82ce0afe8eae31dfb2e8-c8bb2eef89423e365b3a87ff8a54b2ac/tiles/{z}/{x}/{y}&quot;,
+            var tile_layer_d54a7a389d15eb913cc1bb8d85f90d0e = L.tileLayer(
+                &quot;https://earthengine.googleapis.com/v1/projects/701763624385/maps/9bf2b0ea46bc82ce0afe8eae31dfb2e8-3a66d4ee2f48948c0e39b92e33eceda5/tiles/{z}/{x}/{y}&quot;,
                 {&quot;attribution&quot;: &quot;Google Earth Engine&quot;, &quot;detectRetina&quot;: false, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
             );
         
     
-            tile_layer_d9aaa23a0e8863107141eeb377d24af2.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_d54a7a389d15eb913cc1bb8d85f90d0e.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            map_c8e618d7ce92735ff1a0c650d0bde006.fitBounds(
+            map_7a85e5f9d638a1c01221e798176ba504.fitBounds(
                 [[-1.415923073328969, 34.586959568441], [-0.924667743730629, 35.11683922566618]],
                 {}
             );
         
     
-            tile_layer_4c54a010758b4cd0d6d0ac4dab9e382e.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_575c9fb3e08f91d97e12f79cd5fde7d3.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            geo_json_286e289c14631fdc1d20242465db240d.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            geo_json_3af333f193e2fede724ea8fbb379459c.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            tile_layer_23094a2fd750494f4c64b8d3eed881b5.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_78237c243b67a3e5f190892c150da991.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
     
-            tile_layer_d9aaa23a0e8863107141eeb377d24af2.addTo(map_c8e618d7ce92735ff1a0c650d0bde006);
+            tile_layer_d54a7a389d15eb913cc1bb8d85f90d0e.addTo(map_7a85e5f9d638a1c01221e798176ba504);
         
 &lt;/script&gt;
 &lt;/html&gt;" width="100%" height="100%"style="border:none !important;" "allowfullscreen" "webkitallowfullscreen" "mozallowfullscreen"></iframe>
